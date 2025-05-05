@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфоліо - WebVision</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gallery img {
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <header>Наші роботи</header>
@@ -20,13 +37,15 @@
     </nav>
 
     <div class="content">
-        <h2>Приклади наших проектів</h2>
+        <h2>Приклади наших проєктів</h2>
         <p>Ось кілька сайтів, які ми розробили:</p>
-        <ul>
-            <li>Інтернет-магазин для стартапу</li>
-            <li>Корпоративний сайт для IT-компанії</li>
-            <li>Лендінг для рекламної агенції</li>
-        </ul>
+        
+        <div class="gallery">
+            <img src="images/portfolio1.png" alt="Проєкт 1">
+            <img src="images/portfolio2.png" alt="Проєкт 2">
+            <img src="images/portfolio3.png" alt="Проєкт 3">
+            <img src="images/portfolio4.png" alt="Проєкт 4">
+        </div>
     </div>
 </body>
 </html>
