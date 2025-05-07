@@ -111,3 +111,21 @@ nav ul li a:hover {
 .gallery img:hover {
     transform: scale(1.05);
 }
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.logo {
+    width: 120px; /* можеш змінити за бажанням */
+    height: auto;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
