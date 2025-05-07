@@ -123,9 +123,3 @@ nav ul li a:hover {
     width: 120px; /* можеш змінити за бажанням */
     height: auto;
 }
-
-.site-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-}
