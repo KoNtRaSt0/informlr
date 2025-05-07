@@ -12,14 +12,17 @@ header {
     padding: 20px;
     font-size: 24px;
     font-weight: bold;
+    position: relative;
+    text-align: center;
 }
 
-/* Додано стиль для логотипа */
+/* Логотип у лівому верхньому куті */
 .logo {
-    width: 180px;
+    width: 120px;
     height: auto;
-    display: block;
-    margin: 0 auto;
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
 nav {
@@ -110,16 +113,4 @@ nav ul li a:hover {
 
 .gallery img:hover {
     transform: scale(1.05);
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-}
-
-.logo {
-    width: 120px; /* можеш змінити за бажанням */
-    height: auto;
 }
