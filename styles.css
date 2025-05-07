@@ -6,6 +6,13 @@ body {
     text-align: center;
 }
 
+/* 🔁 Анімація пульсації логотипа */
+@keyframes pulse {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.05); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
 header {
     background-color: #333;
     padding: 20px;
@@ -25,6 +32,7 @@ header {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
+    animation: pulse 3s infinite ease-in-out;
 }
 
 .site-title {
@@ -33,7 +41,6 @@ header {
     font-weight: bold;
     margin: 0;
 }
-
 
 nav {
     background-color: #444;
@@ -66,6 +73,14 @@ nav ul li a:hover {
     color: #fff;
 }
 
+/* 🎯 Плавна поява контенту */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .content {
     width: 80%;
     margin: 20px auto;
@@ -73,6 +88,21 @@ nav ul li a:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* 🌈 Світіння кнопки */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px #28a745;
+    }
+    50% {
+        box-shadow: 0 0 20px #28a745;
+    }
 }
 
 .button {
@@ -86,10 +116,15 @@ nav ul li a:hover {
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
+
+    animation: glow 2s infinite;
+    transition: transform 0.3s ease, background-color 0.3s;
 }
 
+/* ✨ Збільшення кнопки при наведенні */
 .button:hover {
     background-color: #218838;
+    transform: scale(1.05);
 }
 
 .social-links a {
@@ -106,7 +141,7 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Стилі для портфоліо */
+/* 🌀 Анімація зображень портфоліо */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -118,9 +153,9 @@ nav ul li a:hover {
     width: 300px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.6s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.05);
+    transform: rotate(5deg) scale(1.05);
 }
