@@ -4,6 +4,7 @@ body {
     padding: 0;
     background: #c2c0c1 url(images/bg.jpg) repeat-x;
     text-align: center;
+    transition: background 1s ease; /* 🆕 плавна зміна кольору фону */
 }
 
 /* 🔁 Анімація пульсації логотипа */
@@ -40,8 +41,12 @@ header {
     font-size: 24px;
     font-weight: bold;
     margin: 0;
+    white-space: nowrap; /* 🆕 для друкарської анімації */
+    overflow: hidden;
+    border-right: 2px solid white;
 }
 
+/* Анімація навігації при наведенні */
 nav {
     background-color: #444;
     padding: 10px 0;
@@ -60,12 +65,28 @@ nav ul li {
 }
 
 nav ul li a {
+    position: relative;
     text-decoration: none;
     color: white;
     font-size: 18px;
     padding: 10px 15px;
     transition: background 0.3s, color 0.3s;
     border-radius: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: #28a745;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 nav ul li a:hover {
@@ -88,11 +109,22 @@ nav ul li a:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s ease forwards;
     animation-delay: 0.3s;
+}
+
+/* 🆕 Анімація при скролі (додаткова класова логіка з JS) */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* 🌈 Світіння кнопки */
@@ -211,7 +243,7 @@ body.scrolled header {
     transition: background-color 0.3s ease;
 }
 
-/* Обов’язковий z-index для основного контенту */
+/* z-index для шарів */
 header, nav, .content, .gallery, .social-links {
     position: relative;
     z-index: 1;
