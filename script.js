@@ -33,7 +33,7 @@ let x = 0;
 let y = 0;
 let angle = 0;
 const radius = 50; // Відстань від краю екрану
-const speed = 0.03;
+const speed = 0.01; // Зменшена швидкість
 const color = 'yellow'; // Колір зірки та сліду
 let side = 'top'; // Початковий бік руху
 
@@ -95,7 +95,7 @@ function animateStar() {
         }
     }
 
-    angle += speed;
+    angle += speed; // Зменшений крок для повільного руху
     requestAnimationFrame(animateStar);
 }
 
