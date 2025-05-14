@@ -25,10 +25,4 @@ if (title) {
     typeTitle();
 }
 
-// Плавна зміна кольору фону
-const colors = ['#ffffff', '#f9f9f9', '#f0f0ff'];
-let index = 0;
-setInterval(() => {
-    document.body.style.background = colors[index % colors.length];
-    index++;
-}, 8000);
+
